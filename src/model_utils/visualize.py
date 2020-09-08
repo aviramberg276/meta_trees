@@ -1,7 +1,5 @@
 import numpy as np
 from graphviz import Digraph
-from sklearn.tree import _tree
-
 
 NODE_ATTR = {'shape': 'box', 'style': 'rounded', 'fontsize': '18'}
 LEAF_ATTR = {'shape': 'oval', 'width': '0.7', 'fixedsize': 'true', 'fontsize': '16'}
@@ -100,32 +98,3 @@ def render_tree(model, x_train, y_train, preprocessor, indices, features=None, i
                     node_names.append(right_name)
     return gs
 
-
-def render_sklearn_tree(tree, features, is_dummy):
-    tree_ = tree.tree_
-    feature_name = [features[i] if i != _tree.TREE_UNDEFINED else "undefined!" for i in tree_.feature]
-    is_dummy = [is_dummy[i] if i != _tree.TREE_UNDEFINED else False for i in tree_.feature]
-
-    g = Digraph()
-
-    def recurse(node, g, parent, relation):
-        if tree_.feature[node] != _tree.TREE_UNDEFINED:
-            feature = feature_name[node]
-            if is_dummy[node]:
-                decision_func = feature + '?'
-            else:
-                bias = tree_.threshold[node]
-                decision_func = '{0}>{1:.2f}'.format(feature, bias)
-
-            g.node(str(node), decision_func, **NODE_ATTR)
-            if parent is not None:
-                g.edge(str(parent), str(node), relation)
-            recurse(tree_.children_left[node], g, node, LEFT_STRING)
-            recurse(tree_.children_right[node], g, node, RIGHT_STRING)
-        else:
-            value = '{0:.3f}'.format(tree_.value[node][0][0])
-            g.node(str(node), value, **LEAF_ATTR)
-            g.edge(str(parent), str(node), relation)
-
-    recurse(0, g, None, None)
-    return g

@@ -10,8 +10,8 @@ from src.run_utils import get_data
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model_path', help='model path', default='')
-    parser.add_argument('--data', choices=['ml_100k', 'ml_1m', 'jester'], default='ml_100k')
+    parser.add_argument('--model_path', help='model path (src/models/<data_type/*.pkl>)')
+    parser.add_argument('--data', choices=['ml_100k', 'ml_1m', 'jester'], default='ml_1m')
     args = parser.parse_args()
     return args
 
@@ -38,6 +38,7 @@ def run(model_path, data):
 
 
 if __name__ == '__main__':
-    # args = parse_args()
-    # run(args.model_path, args.data)
-    run("./models/model.pkl", "ml_100k")
+    args = parse_args()
+    run(args.model_path, args.data)
+
+
