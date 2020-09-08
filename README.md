@@ -17,7 +17,7 @@ First, clone the repository:
 - ```git checkout develop```
 
 Add our dependencies (from the root dir):
--  ```chmod +x ./add_deps.sh && ./add_deps.sh```
+-  ```chmod +x ./env/add_deps.sh && ./env/add_deps.sh```
 
 In order to evalulate the model accuracy (from src dir):
 -   ```python ./evaluate_model.py --model_path models/ml_1m/height(0)_rdim(512)_temp(1.0)_rsparse(0.1)_dist(hard)_batch_size(256)_lr(0.0003).pkl```
