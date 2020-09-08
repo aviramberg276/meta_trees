@@ -34,7 +34,7 @@ def run(model_path, data):
     print('RMSE {0}, MAE {1} (hard, soft)'.format(rmse, mae))
     model.set_dist_func(GUMBEL_HARD)
     rmse, mae = get_regression_performance(train, test, model, preprocessor, group_parameter, target)
-    print('RMSE {0}, MAE {1} (hard, soft)'.format(rmse, mae))
+    print('RMSE {0}, MAE {1} (gumbel, soft)'.format(rmse, mae))
 
 
 if __name__ == '__main__':
