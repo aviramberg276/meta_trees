@@ -16,6 +16,9 @@ First, clone the repository:
 - ```git clone https://github.com/comprendoai/meta_trees ```
 - ```git checkout develop```
 
+Then, move to the src directory:
+-  ```cd meta_trees/src/```
+
 Add our dependencies (from the src dir):
 -  ```chmod +x ./env/add_deps.sh && ./env/add_deps.sh```
 
