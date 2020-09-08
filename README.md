@@ -5,7 +5,7 @@ The provided files should allow you to test our model accuracy and view the gene
 Provided files:
 - model
 - Add dependencies script
-- Few interesting generated explainability trees
+- Few interesting generated explainability trees (found under project root/results/ml_1m)
 
 In order to render all the explainability trees from the provided model, please do the following:
 
