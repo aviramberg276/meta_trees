@@ -1,7 +1,7 @@
 import torch
 from torch import nn
 
-from src.model_utils.utils import weighted_mean
+from model_utils.utils import weighted_mean
 
 
 class Leaf(nn.Module):

@@ -3,9 +3,9 @@ import argparse
 import torch
 from sklearn.preprocessing import StandardScaler
 
-from src.model_utils.evaluation import get_regression_performance
-from src.model_utils.utils import to_x_y, DIST_SOFT, DIST_HARD, GUMBEL_HARD
-from src.run_utils import get_data
+from model_utils.evaluation import get_regression_performance
+from model_utils.utils import to_x_y, DIST_SOFT, DIST_HARD, GUMBEL_HARD
+from run_utils import get_data
 
 
 def parse_args():

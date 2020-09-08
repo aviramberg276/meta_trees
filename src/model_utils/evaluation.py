@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 
-from src.model_utils.utils import to_x_y, to_one_hot
+from model_utils.utils import to_x_y, to_one_hot
 
 
 def _get_acc(y_test, y_pred):

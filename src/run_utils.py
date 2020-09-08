@@ -1,5 +1,5 @@
-from src.data.data_getter import get_movie_lens_100k, get_movie_lens_1m, get_jester
-from src.model_utils.utils import DIST_SOFT, DIST_HARD
+from data.data_getter import get_movie_lens_100k, get_movie_lens_1m, get_jester
+from model_utils.utils import DIST_SOFT, DIST_HARD
 
 
 def get_dist_func(dist_func_name):
