@@ -58,7 +58,6 @@ def render_tree(model, x_train, y_train, preprocessor, indices, features=None, i
         is_dummy = [False for _ in range(x_train.shape[-1])]
 
     tree = model.get_tree(x_train, y_train)
-    print(tree)
 
     gs = Digraph()
     for index in indices:

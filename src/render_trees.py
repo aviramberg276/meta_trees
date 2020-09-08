@@ -31,11 +31,14 @@ def run(model_path, result_dir, data):
     preprocessor.fit(x_train.astype('float'))
     model.set_dist_func(DIST_HARD)
     groups = train.groupby(group_parameter).size().sort_values()
+    isDummy = [False, True, True, True, True, True, True, True, True, True,
+               True, True, True, True, True, True, True, True, True, False,
+               True, False, False]
     for group, size in groups[groups > 50].iteritems():
         group_train = train[train[group_parameter] == group]
         x_train, y_train = _prepare_x_y(group_train, group_parameter, target, preprocessor, False)
         y_train = y_train.reshape(1, -1, 1)
-        g = render_tree(model, x_train, y_train, preprocessor, range(1), columns, [True for i in range(len(columns))])
+        g = render_tree(model, x_train, y_train, preprocessor, range(1), columns, isDummy)
         g.render('{2}/user_id-{0}_size-{1}_soft_full'.format(group, size, result_dir))
 
 
