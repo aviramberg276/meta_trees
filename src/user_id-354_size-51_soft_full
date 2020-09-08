@@ -1,0 +1,13 @@
+digraph {
+	subgraph 0 {
+		"0_root" [label="not movie_ratings_count?" fontsize=18 shape=box style=rounded]
+		"0_root" -> "0_root_left" [label=0]
+		"0_root" -> "0_root_right" [label=1]
+		"0_root_right" [label=3.025 fixedsize=true fontsize=16 shape=oval width=0.7]
+		"0_root_left" [label="not movie_ratings_count?" fontsize=18 shape=box style=rounded]
+		"0_root_left" -> "0_root_left_left" [label=0]
+		"0_root_left_left" [label=4.294 fixedsize=true fontsize=16 shape=oval width=0.7]
+		"0_root_left" -> "0_root_left_right" [label=1]
+		"0_root_left_right" [label=3.321 fixedsize=true fontsize=16 shape=oval width=0.7]
+	}
+}
