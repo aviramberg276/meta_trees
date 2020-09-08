@@ -16,7 +16,7 @@ First, clone the repository:
 - ```git clone https://github.com/comprendoai/meta_trees ```
 - ```git checkout develop```
 
-Add our dependencies (from the root dir):
+Add our dependencies (from the src dir):
 -  ```chmod +x ./env/add_deps.sh && ./env/add_deps.sh```
 
 In order to evalulate the model accuracy (from src dir):
