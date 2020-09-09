@@ -27,15 +27,21 @@ def run(model_path, data):
     x_train, y_train = to_x_y(train, group_parameter, target)
     preprocessor = StandardScaler()
     preprocessor.fit(x_train.astype('float'))
+    
+    print('Evaluating ...')
     model.set_dist_func(DIST_SOFT)
     rmse, mae = get_regression_performance(train, test, model, preprocessor, group_parameter, target)
     print('RMSE {0}, MAE {1} (soft, soft)'.format(rmse, mae))
     model.set_dist_func(DIST_HARD)
     rmse, mae = get_regression_performance(train, test, model, preprocessor, group_parameter, target)
     print('RMSE {0}, MAE {1} (hard, soft)'.format(rmse, mae))
-    model.set_dist_func(GUMBEL_HARD)
+    model.make_hard_routing()
+    model.set_dist_func(DIST_SOFT)
     rmse, mae = get_regression_performance(train, test, model, preprocessor, group_parameter, target)
-    print('RMSE {0}, MAE {1} (gumbel, soft)'.format(rmse, mae))
+    print('RMSE {0}, MAE {1} (soft, hard)'.format(rmse, mae))
+    model.set_dist_func(DIST_HARD)
+    rmse, mae = get_regression_performance(train, test, model, preprocessor, group_parameter, target)
+    print('RMSE {0}, MAE {1} (hard, hard)'.format(rmse, mae))
 
 
 if __name__ == '__main__':
