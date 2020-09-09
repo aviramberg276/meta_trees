@@ -1,0 +1,22 @@
+2020-09-07 10:15:02,161 [INFO ] root running ml_1m/train(False)_test(5) using height(0)_rdim(512)_temp(1.0)_rsparse(0.1)_dist(hard)_batch_size(256)_lr(0.0003)
+2020-09-07 10:23:24,085 [INFO ] root iteration 500: 1.0479535962231175, patience rounds 0
+2020-09-07 10:32:00,189 [INFO ] root iteration 1000: 1.042444286638491, patience rounds 0
+2020-09-07 10:40:25,561 [INFO ] root iteration 1500: 1.0237045443010047, patience rounds 0
+2020-09-07 10:48:39,578 [INFO ] root iteration 2000: 1.0339026470064638, patience rounds 1
+2020-09-07 10:56:38,227 [INFO ] root iteration 2500: 1.0358186282671773, patience rounds 2
+2020-09-07 11:04:33,025 [INFO ] root iteration 3000: 1.0656796975045528, patience rounds 3
+2020-09-07 11:12:24,217 [INFO ] root iteration 3500: 1.051291941068982, patience rounds 4
+2020-09-07 11:20:19,261 [INFO ] root iteration 4000: 1.04459498262466, patience rounds 5
+2020-09-07 11:28:14,843 [INFO ] root iteration 4500: 0.9512295637882465, patience rounds 0
+2020-09-07 11:36:18,717 [INFO ] root iteration 5000: 1.0052680191158736, patience rounds 1
+2020-09-07 11:44:09,628 [INFO ] root iteration 5500: 1.0185920536330788, patience rounds 2
+2020-09-07 11:52:11,634 [INFO ] root iteration 6000: 1.0288940803812172, patience rounds 3
+2020-09-07 12:00:15,618 [INFO ] root iteration 6500: 1.0351517702590574, patience rounds 4
+2020-09-07 12:08:22,876 [INFO ] root iteration 7000: 1.0045033979975606, patience rounds 5
+2020-09-07 12:16:25,330 [INFO ] root iteration 7500: 1.0495462341051092, patience rounds 6
+2020-09-07 12:16:40,191 [INFO ] root Final: 0.9613281286234526
+2020-09-07 12:16:40,192 [INFO ] root Evaluating on test
+2020-09-07 12:18:25,844 [INFO ] root RMSE 1.036898799769546, MAE 0.8189537482425607 (soft, soft)
+2020-09-07 12:20:23,400 [INFO ] root RMSE 0.9623475139423737, MAE 0.7583930424072787 (hard, soft)
+2020-09-07 12:22:08,659 [INFO ] root RMSE 1.0349142959190611, MAE 0.8187999542811102 (soft, hard)
+2020-09-07 12:24:06,497 [INFO ] root RMSE 0.9813890639777825, MAE 0.7740399240523771 (hard, hard)
