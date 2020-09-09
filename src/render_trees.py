@@ -49,4 +49,3 @@ def run(model_path, result_dir, data):
 if __name__ == '__main__':
     args = parse_args()
     run(args.model_path, args.result_dir, args.data)
-    run("./models/ml_1m/height(0)_rdim(512)_temp(1.0)_rsparse(0.1)_dist(hard)_batch_size(256)_lr(0.0003)_nn", "./sand/test/", "ml_1m")
