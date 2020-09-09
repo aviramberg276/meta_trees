@@ -24,16 +24,15 @@ Add our dependencies (from src dir):
 -  ```chmod +x ./env/add_deps.sh && ./env/add_deps.sh```
 
 Models can be found under the ```models/<dataset>``` directory (from src dir).
-The directory contains 3 file types:
+The directory contains 2 file types:
 - Log file with the training accuracy.
-- Model weights file.
-- Model pkl object (use this file in order to evaluate and render the tree).
+- Model weights file (use this file in order to evaluate and render the tree).
 
 In order to evalulate the model accuracy (from src dir):
--   ```python ./evaluate_model.py --model_path models/<dataset>/<filename>.pkl --data <dataset>```
+-   ```python ./evaluate_model.py --model_path models/<dataset>/<weights_filename>.pkl --data <dataset>```
 
 In order to generate the explainability trees (from src dir):
-- ```python ./render_trees.py --model_path models/<dataset>/<filename>.pkl --result_dir <path> --data <dataset>```
+- ```python ./render_trees.py --model_path models/<dataset>/<weights_filename> --result_dir <path> --data <dataset>```
 
 ** Please note: Specifying the model file name may differ, depending on your os type (since it contains special characters). You might need to wrap the file name with single quotes. **
 
