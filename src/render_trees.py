@@ -11,7 +11,7 @@ from sklearn.preprocessing import StandardScaler
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model_path', help='model path (src/models/<data_type/*.pkl>)')
+    parser.add_argument('--model_path', help='model path (src/models/<data_type>/<weights_filename>)')
     parser.add_argument('--result_dir', help='dir for the output trees')
     parser.add_argument('--data', choices=['ml_100k', 'ml_1m', 'jester'], default='ml_1m')
     args = parser.parse_args()
@@ -21,7 +21,7 @@ def parse_args():
 def run(model_path, result_dir, data):
     print("Load model: {0}".format(model_path))
     model = get_regression_tree(23, 1.0, 5.0, 512, 6, DIST_HARD, 1.0)
-    model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))  # ,
+    model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
     model.eval()
 
     print("Process {0} dataset".format(data))
@@ -49,3 +49,4 @@ def run(model_path, result_dir, data):
 if __name__ == '__main__':
     args = parse_args()
     run(args.model_path, args.result_dir, args.data)
+    run("./models/ml_1m/height(0)_rdim(512)_temp(1.0)_rsparse(0.1)_dist(hard)_batch_size(256)_lr(0.0003)_nn", "./sand/test/", "ml_1m")
