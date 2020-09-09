@@ -17,12 +17,12 @@ def parse_args():
     args = parser.parse_args()
     return args
 
-
 def run(model_path, result_dir, data):
     print("Load model: {0}".format(model_path))
+
     model = get_regression_tree(23, 1.0, 5.0, 512, 6, DIST_HARD, 1.0)
     model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))  # ,
-    model.eval()
+    # model.eval()
 
     print("Process {0} dataset".format(data))
     train, test = get_data(data)
@@ -37,15 +37,16 @@ def run(model_path, result_dir, data):
     isDummy = [False, True, True, True, True, True, True, True, True, True,
                True, True, True, True, True, True, True, True, True, False,
                True, False, False]
-    for group, size in groups[groups > 50].iteritems():
+    for group in [18, 563, 1491, 1544, 1632, 1737, 1799, 2806, 3285, 3829, 4183, 4922, 5530, 5747]: #groups[groups > 50].iteritems():
         group_train = train[train[group_parameter] == group]
         x_train, y_train = _prepare_x_y(group_train, group_parameter, target, preprocessor, False)
         y_train = y_train.reshape(1, -1, 1)
         g = render_tree(model, x_train, y_train, preprocessor, range(1), columns, isDummy)
-        g.render('{2}/user_id-{0}_size-{1}_hard'.format(group, size, result_dir))
+        g.render('{2}/user_id-{0}_size-{1}_hard_dyn'.format(group, 0, result_dir))
 
 
 
 if __name__ == '__main__':
-    args = parse_args()
-    run(args.model_path, args.result_dir, args.data)
+    # args = parse_args()
+    # run(args.model_path, args.result_dir, args.data)
+    run("./models/ml_1m/height(0)_rdim(512)_temp(1.0)_rsparse(0.1)_dist(hard)_batch_size(256)_lr(0.0003)_n", "./sand/1m6/", "ml_1m")
