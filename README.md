@@ -29,7 +29,7 @@ The directory contains 2 file types:
 - Model weights file (use this file in order to evaluate and render the tree).
 
 In order to evalulate the model accuracy (from src dir):
--   ```python ./evaluate_model.py --model_path models/<dataset>/<weights_filename>.pkl --data <dataset>```
+-   ```python ./evaluate_model.py --model_path models/<dataset>/<weights_filename> --data <dataset>```
 
 In order to generate the explainability trees (from src dir):
 - ```python ./render_trees.py --model_path models/<dataset>/<weights_filename> --result_dir <path> --data <dataset>```
