@@ -22,7 +22,7 @@ def parse_args():
 def run(model_path, result_dir, data):
     print("Load model: {0}".format(model_path))
     set_seed(0)
-    model = get_regression_tree(23, 1.0, 5.0, 512, 5, DIST_HARD, 1.0)
+    model = get_regression_tree(23, 1.0, 5.0, 512, 6, DIST_HARD, 1.0)
     model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
     model.eval()
 
